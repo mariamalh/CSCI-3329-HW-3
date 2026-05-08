@@ -13,25 +13,23 @@
 StandardScaler was applied to all the feature variables so that features such as age did not overpower the other binary features and cause the KNN and Neural Network algorithms to not run properly.
 
 ## 3. Part 2 — Algorithm Comparison
-|      Algorithm      | Mean Accuracy | Std  |
-| Linear Classifier   |     0.8892    |0.466 |
-| Logistic Regression |     0.9259    |0.344 |
-| KNN                 |     0.9253    |0.355 |
-| Gaussian NB         |     0.8896    |0.421 |
-| Neural Network      |     0.9739    |0.0227| 
-- The best performing algorithm was the Neural Network algorithm with a 97.39% accuracy on average and the most stable algorithm with a varience of +-2.27% from fold to fold. This is likely because the neural network algorithm is best at finding non-linear patterns between variables, and the relationship between the symptoms/variables in the dataset seems to be non-linear because the linear classifier algoithm performed the worst on them.
-  
+|      Algorithm      | Mean Accuracy |  Std  |
+| Linear Classifier   |     0.8892    |0.0466 |
+| Logistic Regression |     0.9259    |0.0344 |
+| KNN                 |     0.9253    |0.0355 |
+| Gaussian NB         |     0.8896    |0.0421 |
+| Neural Network      |     0.9739    |0.0227 | 
+- The best performing algorithm was the Neural Network algorithm with a 97.39% accuracy on average and the most stable algorithm with a varience of +-2.27% from fold to fold. This is likely because the neural network algorithm is best at finding non-linear patterns between variables, and the relationship between the symptoms/variables in the dataset seems to be non-linear because the linear classifier algoithm performed the worst out of all the algorithms with an accuracy of 88.92% and a varience of +-46.6% from fold to fold. The fewer number of features in the dataset allowed the KNN algorithm to perform well. 
+
 ## 4. Part 3 — Feature Selection
 - Forward selection was used because the number of features in the dataset is 16 which is too large for exhaustive search.
-|      Algorithm      |                                  Best Feature Subset                                    | Mean Accuracy | Std  |
-| Linear Classifier   | Gender,Polyuria,Polydipsia,weakness,Genital thrush,Itching,Irritability,delayed healing |     0.8842    |0.525 |
-| Logistic Regression | Gender,Polyuria,Polydipsia,Polyphagia,delayed healing,partial paresis,Alopecia,Obesity  |     0.9164    |0.364 |
-| KNN                 | Age,Gender,Polyuria,Polydipsia,Genital thrush,Itching,Irritibality,Alopecia             |     0.9456    |0.316 |
-| Gaussian NB         | Age,Gender,Polyuria,Genital thrush,Itching,Irritibality,delayed healing,muscle stiffness|     0.8843    |0.426 |
-| Neural Network      | Age,Gender,Polyuria,Polydipsia,Sudden weightloss,itching,delayed healing,alopecia       |     0.9744    |0.0220| 
+|      Algorithm      |                                  Best Feature Subset                                    | Mean Accuracy |  Std  |
+| Linear Classifier   | Gender,Polyuria,Polydipsia,weakness,Genital thrush,Itching,Irritability,delayed healing |     0.8842    |0.0525 |
+| Logistic Regression | Gender,Polyuria,Polydipsia,Polyphagia,delayed healing,partial paresis,Alopecia,Obesity  |     0.9164    |0.0364 |
+| KNN                 | Age,Gender,Polyuria,Polydipsia,Genital thrush,Itching,Irritibality,Alopecia             |     0.9456    |0.0316 |
+| Gaussian NB         | Age,Gender,Polyuria,Genital thrush,Itching,Irritibality,delayed healing,muscle stiffness|     0.8843    |0.0426 |
+| Neural Network      | Age,Gender,Polyuria,Polydipsia,Sudden weightloss,itching,delayed healing,alopecia       |     0.9744    |0.0220 | 
 
 
 ## 5. Discussion
-- Part 2 vs Part 3 comparison
-- Per-algorithm observations
-- Limitations and ideas for improvement
+- 
