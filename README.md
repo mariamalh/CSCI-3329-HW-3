@@ -19,7 +19,8 @@ StandardScaler was applied to all the feature variables so that features such as
 | KNN                 |     0.9253    |0.355 |
 | Gaussian NB         |     0.8896    |0.421 |
 | Neural Network      |     0.9739    |0.0227| 
-
+- The best performing algorithm was the Neural Network algorithm with a 97.39% accuracy on average and the most stable algorithm with a varience of +-2.27% from fold to fold. This is likely because the neural network algorithm is best at finding non-linear patterns between variables, and the relationship between the symptoms/variables in the dataset seems to be non-linear because the linear classifier algoithm performed the worst on them.
+  
 ## 4. Part 3 — Feature Selection
 - Forward selection was used because the number of features in the dataset is 16 which is too large for exhaustive search.
 |      Algorithm      |                                  Best Feature Subset                                    | Mean Accuracy | Std  |
