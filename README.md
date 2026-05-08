@@ -15,6 +15,7 @@
 - Rows containing missing values were dropped to prevent the scikit algorithms from crashing. No columns were removed, all were relavent.
 - The categorical features and the target value were encoded using LabelEncoder so that the dimensionality of the dataset wasn't increased.
 StandardScaler was applied to all the feature variables so that features such as age did not overpower the other binary features and cause the KNN and Neural Network algorithms to not run properly.
+- A fixed seed (random_state = 42) was used for all the algorithms.
 
 ## 3. Part 2 — Algorithm Comparison
 <div align="center">
