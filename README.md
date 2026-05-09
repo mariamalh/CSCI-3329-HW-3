@@ -11,6 +11,7 @@
 | Negative | 0 | 200 | 38.5% |
   
 </div>
+
 ## 2. Preprocessing
 - Rows containing missing values were dropped to prevent the scikit algorithms from crashing. No columns were removed, all were relavent.
 - The categorical features and the target value were encoded using LabelEncoder so that the dimensionality of the dataset wasn't increased.
