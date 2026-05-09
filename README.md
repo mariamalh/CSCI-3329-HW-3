@@ -44,5 +44,13 @@ StandardScaler was applied to all the feature variables so that features such as
 | Neural Network | Age, Gender, Polyuria, Polydipsia, Sudden weightloss, itching, delayed healing, alopecia | 0.9744 | 0.0220 |
 
 </div>
+
 ## 5. Discussion
-- 
+The mean scores and the stds for the algorithms with and without optimization via feature selection shows that having less features doesn't always improve an algorithm's performance. The Neural Network algorithm remained the best performing algorithm even after optimization with little effect on its accuracy and std (average accuracy and std before: 97.39%, +-2.27%, average accuracy and std after: 97.44%, +-2.20%). The KNN algorithm had the biggest improvement in performance with its average accuracy increasing from 95.23% to 94.56% and its std decreasing from +-3.55% to +-3.16%. This is because the KNN algorithm benefits from having a constrained number of actively contributing features. On the other hand, the Logistic Regression, Linear Classifier, and Gaussian NB algorithms decreased in accuracy with the optimization. This is likely due to forward selection discarding features that contribute lightly but significantly when in combination with other features.
+
+## 6. Reproduction
+- Python version: 3.12
+- scikit-learn: 1.5.1
+- pandas: 2.0.3
+- numpy: 2.0.2
+
