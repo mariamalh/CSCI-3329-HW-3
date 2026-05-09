@@ -30,7 +30,8 @@ StandardScaler was applied to all the feature variables so that features such as
 | Neural Network | 0.9739 | 0.0227 |
 
 </div>
-- The best performing algorithm was the Neural Network algorithm with a 97.39% accuracy on average and the most stable algorithm with a varience of +-2.27% from fold to fold. This is likely because the neural network algorithm is best at finding non-linear patterns between variables, and the relationship between the symptoms/variables in the dataset seems to be non-linear because the linear classifier algoithm performed the worst out of all the algorithms with an accuracy of 88.92% and a varience of +-46.6% from fold to fold. The fewer number of features in the dataset allowed the KNN algorithm to perform well. 
+
+The best performing algorithm was the Neural Network algorithm with a 97.39% accuracy on average and the most stable algorithm with a varience of +-2.27% from fold to fold. This is likely because the neural network algorithm is best at finding non-linear patterns between variables, and the relationship between the symptoms/variables in the dataset seems to be non-linear because the linear classifier algorithm performed the worst out of all the algorithms with an accuracy of 88.92% and a varience of +-46.6% from fold to fold. The fewer number of features in the dataset allowed the KNN algorithm to perform well. 
 
 ## 4. Part 3 — Feature Selection
 - Forward selection was used because the number of features in the dataset is 16 which is too large for exhaustive search.
@@ -47,7 +48,15 @@ StandardScaler was applied to all the feature variables so that features such as
 </div>
 
 ## 5. Discussion
+- Part 2 vs Part 3
+(For repeatedkfolds, part 2 used n_repeats = 100 while part 3 used n_repeats = 10 because of runtime issues.)
 The mean scores and the stds for the algorithms with and without optimization via feature selection shows that having less features doesn't always improve an algorithm's performance. The Neural Network algorithm remained the best performing algorithm even after optimization with little effect on its accuracy and std (average accuracy and std before: 97.39%, +-2.27%, average accuracy and std after: 97.44%, +-2.20%). The KNN algorithm had the biggest improvement in performance with its average accuracy increasing from 95.23% to 94.56% and its std decreasing from +-3.55% to +-3.16%. This is because the KNN algorithm benefits from having a constrained number of actively contributing features. On the other hand, the Logistic Regression, Linear Classifier, and Gaussian NB algorithms decreased in accuracy with the optimization. This is likely due to forward selection discarding features that contribute lightly but significantly when in combination with other features.
+
+- Per Algorithm Observations
+The Neural Network algorithm was the most accurate and stable, because its multi-layer architecture accounts for certain features being irrelevant without optimization. The KNN algorithm performed similarly accuratly and stably with optimized feature selection removing irrelevant features so that neighbouring features could be determined better. The Logistic Regression algorithm had a high accuracy before optimization but dropped after it because it removed features that contributed to its hyperplane. The Linear Classifier and Gaussian NB algorithms had good baseline accuracy but dropped in accuracy after optimization because it removed features which contributed cummulatively with other features.
+
+- Limitations and Ideas for Improvement
+The main limitation for the testing of the models was that the number of n_repeats used in part 2 (100) differed from the number of n_repeats used in part 3 (10) because of limited device memory space. This made the test less fair. Using the same numbber would make the results of the test more accurate and reliable but increase the run time of the test significantly.
 
 ## 6. Reproduction
 - Python version: 3.12
